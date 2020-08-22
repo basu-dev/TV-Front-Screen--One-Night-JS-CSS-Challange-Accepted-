@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  user-select:none;
+}
+.tv {
+  height: 100vh;
+  width: 100%;
+  background: rgb(71, 71, 71);
+  overflow: hidden;
+  position: relative;
+}
+.mute{
+  text-transform: uppercase;
+  position: absolute;
+  left:20px;
+  top:20px;
+  color:white;
+  width:100px;
+  text-align: center;
+  padding:3px 7px;
+  user-select: none;
+  cursor: pointer;
+  border:1px solid grey;
+  box-shadow: 5px 2px 20px solid red;
+  z-index:5;
+}
+.tv video {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.tv .top {
+  width: 100vw;
+  padding: 0 20px;
+  height: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  left: 0;
+  top: 15px;
+}
+.top .logo {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.top .logo div {
+  text-align: center;
+  color: gold;
+  font-size: 20px;
+  margin-top: -7px;
+}
+.top .logo svg {
+  width: 100px;
+  height: 100px;
+  stroke: gold;
+}
+.tv .bottom {
+  position: fixed;
+  bottom: 7px;
+  left: 0;
+}
+.content {
+  transition: 1s;
+  display: block;
+  margin-top: 3px;
+  z-index: -2;
+  height: 28px;
+  overflow: hidden;
+  right: -100%;
+  width: 100vw;
+  margin-right: -100%;
+}
+.content div {
+  transition: 1s;
+  position: relative;
+  top: 0px;
+  height: 30px;
+  width: 100%;
+  background-color: green;
+  right: -100%;
+}
+.flash-news .title {
+  background: orangered;
+  background:linear-gradient(90deg,orangered,orangered,rgba(255, 68, 0, 0.197));
+  width: fit-content;
+  padding: 5px 40px 5px 10px;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-left: -100%;
+  transition: 1s;
+}
+.flash-news span {
+  transition: 1s ease-in-out;
+  position: absolute;
+  padding: 3px 5px;
+  color: rgb(240, 234, 234);
+  width: 100vw;
+  font-size: 18px;
+  text-align: center;
+  top: 55px;
+  visibility: hidden;
+  z-index: 0;
+  opacity: 0;
+}
+.flash-news span:first-child {
+  visibility: visible;
+  top: 43px;
+}
+.all-news {
+  box-sizing: content-box;
+  padding: 2px;
+  margin-top: 3px;
+  z-index: 1000;
+  background: blue;
+  height: 22px;
+  min-width: fit-content;
+  width: 4000px;
+  color: white;
+  overflow: -x scroll;
+}
+.all-news div {
+  position: absolute;
+  width: 130px;
+  left: calc(100vw - 130px);
+  padding: 2px 10px;
+  background: rgb(214, 214, 214);
+  height: 22px;
+  bottom: 2px;
+  color: black;
+  z-index: 10;
+}
+.all-news span {
+  position: relative;
+  left: -20px;
+  animation: animate 40s infinite linear;
+  z-index: 3;
+}
+@keyframes animate {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: -95%;
+  }
+}
